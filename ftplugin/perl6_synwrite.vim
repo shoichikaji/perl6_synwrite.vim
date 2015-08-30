@@ -8,12 +8,10 @@ if exists("b:did_perl6_synwrite")
 endif
 let b:did_perl6_synwrite = 1
 
-let s:default_perl6_synwrite_au = 0
-
 "" execute the given do_command if the buffer is syntactically correct perl6
 "" -- or if do_anyway is true
 function! s:Perl6SynDo(do_anyway,do_command)
-  let command = "!perl6 -c"
+  let command = "!perl6 -c -"
 
   " we need to cat here because :exec would add a space between ! and command
   " let to_exec = "write !" . command
