@@ -2,7 +2,7 @@
 " original author : Ricardo Signes <rjbs-vim@public.manxome.org>
 " modified by: Shoichi Kaji <skaji@cpan.org>
 
-"" abort if b:did_perl_synwrite is true: already loaded or user pref
+"" abort if b:did_perl6_synwrite is true: already loaded or user pref
 if exists("b:did_perl6_synwrite")
 	finish
 endif
