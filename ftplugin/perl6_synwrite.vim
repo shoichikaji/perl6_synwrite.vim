@@ -25,4 +25,4 @@ function! s:Perl6SynDo(do_anyway,do_command)
 endfunction
 
 "" the :Write command
-command -buffer -nargs=* -complete=file -range=% -bang W call s:Perl6SynDo("<bang>"=="!","<line1>,<line2>write<bang> <args>")
+command! -buffer -nargs=* -complete=file -range=% -bang W call s:Perl6SynDo("<bang>"=="!","<line1>,<line2>write<bang> <args>")
