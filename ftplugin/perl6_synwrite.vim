@@ -13,6 +13,18 @@ let b:did_perl6_synwrite = 1
 function! s:Perl6SynDo(do_anyway,do_command)
   let command = "!perl6 -c -"
 
+  " resolve lib/ directories path,
+  " and append them to @*INC
+  let root = expand('%:p:h')
+  while root != '/'
+    if isdirectory(root.'/lib')
+      let command = '!perl6 -I'.root.'/lib -c -'
+      break
+    endif
+    let root = resolve(root.'/..')
+  endwhile
+  " echo command
+
   " we need to cat here because :exec would add a space between ! and command
   " let to_exec = "write !" . command
   exec "write" command
